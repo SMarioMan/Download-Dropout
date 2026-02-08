@@ -1,6 +1,9 @@
 # Use a slim Python image for a smaller footprint
 FROM python:3.11-slim
 
+# Ensure Python output shows in Docker logs
+ENV PYTHONUNBUFFERED=1
+
 # Install ffmpeg and curl
 RUN apt-get update && apt-get install -y \
     ffmpeg \
